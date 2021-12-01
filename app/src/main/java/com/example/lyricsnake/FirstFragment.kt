@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.lyricsnake.databinding.FragmentFirstBinding
+import com.example.lyricsnake.model.FormModel
 
 class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
@@ -22,6 +23,18 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    }
+
+
+
+    private fun createForm(name: String, age: String, eyeColour:String): FormModel {
+
+        return FormModel(name, age, eyeColour)
+    }
+
+    fun getTextFromEditText(): String {
+
+        return "${binding.etName.text}"
     }
 
     override fun onDestroyView() {
