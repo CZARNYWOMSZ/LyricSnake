@@ -1,4 +1,4 @@
-package com.example.kalkulator.model
+package com.example.lyricsnake.model
 
 data class FormModel (
     val name: String,
