@@ -23,6 +23,18 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.btnResult.setOnClickListener {
+            val form = createForm(
+                binding.etName.text.toString(),
+                binding.etAge.text.toString(),
+                binding.etEyeColour.text.toString()
+            )
+            var text = ""
+            text += "Name: ${form.name}\n"
+            text += "Age: ${form.age}\n"
+            text +=  "${getString(R.string.what_is_your_eye_colour)} ${form.eyecolour}\n"
+            binding.tvResult.text = text
+        }
     }
 
 
