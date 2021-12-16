@@ -6,7 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.lyricsnake.databinding.FragmentSecondBinding
+import com.example.lyricsnake.SecondFragmentArgs
+
 class SecondFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
@@ -22,6 +25,10 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val age = navArgs<SecondFragmentArgs>().value.age
+        val name = navArgs<SecondFragmentArgs>().value.name
+        val eyeColour = navArgs<SecondFragmentArgs>().value.eyeColour
     }
 
     override fun onDestroyView() {
