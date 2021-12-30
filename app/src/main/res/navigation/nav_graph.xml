@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/CardFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -13,20 +13,63 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_ListFragment"
+            app:destination="@id/ListFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.lyricsnake.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
         <argument
-            android:name="name"
+            android:name="firstName"
+            app:argType="string"/>
+        <argument
+            android:name="lastName"
             app:argType="string"/>
         <argument
             android:name="age"
             app:argType="string"/>
-        <argument
-            android:name="eyeColour"
-            app:argType="string"/>
+
     </fragment>
+    <fragment
+        android:id="@+id/ListFragment"
+        android:name="com.example.lyricsnake.ListFragment"
+        android:label="ListFragment"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/action_ListFragment_to_SecondFragment2"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CardFragment"
+        android:name="com.example.lyricsnake.CardFragment"
+        android:label="CardFragment"
+        tools:layout="@layout/fragment_card">
+
+        <action
+            android:id="@+id/action_CardFragment_to_ResultFragment"
+            app:destination="@id/ResultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ResultFragment"
+        android:name="com.example.lyricsnake.ResultFragment"
+        android:label="@string/result_fragment_label"
+        tools:layout="@layout/fragment_result">
+    <argument
+        android:name="speciesName"
+        app:argType="string"/>
+    <argument
+        android:name="colour"
+        app:argType="string"/>
+    <argument
+        android:name="frog"
+        app:argType="string"/>
+    </fragment>
+
 </navigation>

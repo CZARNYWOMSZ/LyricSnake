@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lyricsnake.databinding.FragmentFirstBinding
 import com.example.lyricsnake.model.FormModel
+import com.example.lyricsnake.model.PersonModel
+import kotlin.math.max
 
 class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
@@ -23,6 +25,7 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.btnResult.setOnClickListener {
             val form = createForm(
                 binding.etName.text.toString(),
@@ -35,11 +38,7 @@ class FirstFragment : Fragment() {
 //            text +=  "${getString(R.string.what_is_your_eye_colour)} ${form.eyeColour}\n"
 //            binding.tvResult.text = text
             findNavController().navigate(
-                FirstFragmentDirections.actionFirstFragmentToSecondFragment(
-                    binding.etName.text.toString(),
-                    binding.etAge.text.toString(),
-                    binding.etEyeColour.text.toString()
-                )
+                FirstFragmentDirections.actionFirstFragmentToListFragment()
             )
 
 
@@ -50,8 +49,13 @@ class FirstFragment : Fragment() {
         return FormModel(name, age, eyeColour)
     }
 
-    private fun createForm2(name: String, age: String, eyeColour: String) =
-        FormModel(name, age, eyeColour)
+    val person = createPerson(
+        firstname = "max",
+        lastname = "podbielski",
+        age = "16"
+    )
+    private fun createPerson(firstname: String, lastname: String, age: String) =
+        PersonModel(firstname, lastname, age)
 
     override fun onDestroyView() {
         super.onDestroyView()
