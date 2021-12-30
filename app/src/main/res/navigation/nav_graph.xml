@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/CardFragment">
+    app:startDestination="@id/VideoFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -71,5 +71,11 @@
         android:name="frog"
         app:argType="string"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/VideoFragment"
+        android:name="com.example.lyricsnake.VideoFragment"
+        android:label="VideoFragment"
+        tools:layout="@layout/fragment_video"/>
 
 </navigation>
