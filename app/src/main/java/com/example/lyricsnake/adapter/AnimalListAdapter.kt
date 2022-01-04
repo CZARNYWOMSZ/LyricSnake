@@ -5,19 +5,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lyricsnake.databinding.CardPersonBinding
+import com.example.lyricsnake.databinding.AnimalsCardBinding
 import com.example.lyricsnake.model.FrogModel
 
-class FrogListAdapter(
+class AnimalListAdapter(
     private val onClickListener:(FrogModel) -> Unit
-) : ListAdapter<FrogModel, FrogListAdapter.FrogListAdapterViewHolder>(DIFF_CALLBACK){
+) : ListAdapter<FrogModel, AnimalListAdapter.AnimalListAdapterViewHolder>(DIFF_CALLBACK){
 
-    override fun onCreateViewHolder(parent:ViewGroup,viewType:Int):FrogListAdapterViewHolder =
-        FrogListAdapterViewHolder(
-            CardPersonBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+    override fun onCreateViewHolder(parent:ViewGroup,viewType:Int):AnimalListAdapterViewHolder =
+        AnimalListAdapterViewHolder(
+            AnimalsCardBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         )
 
-    override fun onBindViewHolder(holder: FrogListAdapterViewHolder, position: Int) =
+    override fun onBindViewHolder(holder: AnimalListAdapterViewHolder, position: Int) =
         holder.bind(getItem(position),onClickListener)
 
     companion object{
@@ -30,15 +30,14 @@ class FrogListAdapter(
         }
     }
 
-    class FrogListAdapterViewHolder(private val binding : CardPersonBinding) : RecyclerView.ViewHolder(binding.root){
+    class AnimalListAdapterViewHolder(private val binding : AnimalsCardBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(
             model: FrogModel,
             onClickListener: (FrogModel) -> Unit
         ){
-            binding.tvFirstName.text = model.spiecesName
-            binding.tvLastName.text = model.colour
-            binding.tvAge.text = model.frog
-            binding.cv.setOnClickListener{onClickListener(model)}
+            binding.tvAnimalName.text = model.spiecesName
+            binding.blackLine
+            binding.acv.setOnClickListener{onClickListener(model)}
         }
     }
 }

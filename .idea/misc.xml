@@ -7,13 +7,20 @@
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/drawable/ic_baseline_accessibility_24.xml" value="0.2703125" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/activity_main.xml" value="0.18659420289855072" />
+        <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/animals_card.xml" value="0.264" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/card_person.xml" value="0.176" />
+        <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/card_targaryen.xml" value="0.6" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/content_main.xml" value="0.18659420289855072" />
+        <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/fragment_animals_card.xml" value="0.23278985507246377" />
+        <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/fragment_animals_card_result.xml" value="0.23278985507246377" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/fragment_card.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/fragment_first.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/fragment_list.xml" value="0.1802536231884058" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/fragment_result.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/fragment_second.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/fragment_targaryen.xml" value="0.22282608695652173" />
+        <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/fragment_targaryen_result.xml" value="0.22282608695652173" />
+        <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/layout/fragment_video.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
         <entry key="..\:/Users/Max/Documents/LyricSnake/LyricSnake/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14635416666666667" />
       </map>
@@ -25,5 +32,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>

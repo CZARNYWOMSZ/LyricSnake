@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/CardFragment">
+    app:startDestination="@id/TargaryenFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -70,6 +70,78 @@
     <argument
         android:name="frog"
         app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/AnimalCardsFragment"
+        android:name="com.example.lyricsnake.AnimalCardsFragment"
+        android:label="AnimalCardsFragment"
+        tools:layout="@layout/fragment_animals_card">
+
+        <action
+            android:id="@+id/action_AnimalCardsFragment_to_AnimalCardsResultFragment"
+            app:destination="@id/AnimalCardsResultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AnimalCardsResultFragment"
+        android:name="com.example.lyricsnake.AnimalCardsResultFragment"
+        android:label="AnimalCardsResultFragment"
+        tools:layout="@layout/fragment_animals_card_result">
+        <argument
+            android:name="speciesName"
+            app:argType="string"/>
+        <argument
+            android:name="colour"
+            app:argType="string"/>
+        <argument
+            android:name="frog"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/TargaryenFragment"
+        android:name="com.example.lyricsnake.TargaryenFragment"
+        android:label="TargaryenFragment"
+        tools:layout="@layout/fragment_targaryen">
+
+        <action
+            android:id="@+id/action_TargaryenFragment_to_TargaryenResultFragment"
+            app:destination="@id/TargaryenResultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/TargaryenResultFragment"
+        android:name="com.example.lyricsnake.TargaryenResultFragment"
+        android:label="TargaryenResultFragment"
+        tools:layout="@layout/fragment_targaryen_result">
+        <argument
+            android:name="name"
+            app:argType="string"/>
+        <argument
+            android:name="alias"
+            app:argType="string"/>
+        <argument
+            android:name="yearBornIn"
+            app:argType="string"/>
+        <argument
+            android:name="yearDiedIn"
+            app:argType="string"/>
+        <argument
+            android:name="words"
+            app:argType="string"/>
+        <argument
+            android:name="hisDragonsName"
+            app:argType="string"/>
+        <argument
+            android:name="yearsRuled"
+            app:argType="string"/>
+        <argument
+            android:name="hairColour"
+            app:argType="string"/>
+        <argument
+            android:name="eyeColour"
+            app:argType="string"/>
     </fragment>
 
 </navigation>
