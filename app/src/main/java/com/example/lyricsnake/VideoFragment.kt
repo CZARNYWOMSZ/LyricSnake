@@ -32,7 +32,7 @@ class VideoFragment: Fragment() {
 
             binding.playerView.player = it
 
-            val mediaItem: MediaItem = MediaItem.fromUri("http://techslides.com/demos/sample-videos/small.mp4")
+            val mediaItem: MediaItem = MediaItem.fromUri("https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/VhMpQkPilil163b9e/microbiology-laboratory-work-with-tests_rpettrbhm__b93770175444175a253144fe77f495aa__P360.mp4")
             it.setMediaItem(mediaItem)
             it.prepare()
             it.play()
