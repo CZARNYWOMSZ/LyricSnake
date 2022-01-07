@@ -37,6 +37,7 @@ class TargaryenResultFragment : Fragment() {
         val eyeColour = navArgs<TargaryenResultFragmentArgs>().value.eyeColour
         val hairColour = navArgs<TargaryenResultFragmentArgs>().value.hairColour
         val image = navArgs<TargaryenResultFragmentArgs>().value.image
+        val description = navArgs<TargaryenResultFragmentArgs>().value.description
 
         var text = ""
         text += "Kings Name: ${name}\n"
@@ -46,6 +47,9 @@ class TargaryenResultFragment : Fragment() {
         context?.let {
             binding.ivTargaryenImage.setImageDrawable(ContextCompat.getDrawable(it,image))
         }
+        var info = ""
+        text += "${description}"
+        binding.tvTargaryenDescription.text = info
     }
 
 
@@ -60,9 +64,10 @@ class TargaryenResultFragment : Fragment() {
         yearsRuled: String,
         hairColour: String,
         eyeColour: String,
-        image: Int
+        image: Int,
+        description: String
     ): TargaryenModel {
-        return TargaryenModel(name, alias, yearBornIn, yearDiedIn, hisDragonsName, words, yearsRuled, hairColour, eyeColour, image)
+        return TargaryenModel(name, alias, yearBornIn, yearDiedIn, hisDragonsName, words, yearsRuled, hairColour, eyeColour, image, description)
     }
 
 

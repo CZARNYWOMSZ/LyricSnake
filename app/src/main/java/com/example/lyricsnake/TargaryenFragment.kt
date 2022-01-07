@@ -45,7 +45,8 @@ class TargaryenFragment : Fragment() {
                     model.yearsRuled,
                     model.hairColour,
                     model.eyeColour,
-                    model.image
+                    model.image,
+                    model.description
                 )
             )
         }
@@ -59,14 +60,15 @@ class TargaryenFragment : Fragment() {
             TargaryenModel(
                 "Aegon the first",
                 "the Conqueror",
-                "31 B.C",
-                "20",
+                "27 B.C",
+                "37 A.C",
                 "Fire and Blood",
                 "Balerion",
-                "0-20",
+                "36",
                 "Silver",
                 "purple",
-                R.drawable.sigil_targaryen
+                R.drawable.aegon_the_conqueror,
+            ""
             )
         )
 
@@ -74,14 +76,45 @@ class TargaryenFragment : Fragment() {
             TargaryenModel(
                 "Aerys the second",
                 "the Mad King",
-                "250 A.C",
-                "20",
+                "244 A.C",
+                "283 A.C",
                 "Fire and Blood",
-                "Balerion",
-                "0-20",
+                "He had none",
+                "21",
                 "Silver",
                 "purple",
-                 R.drawable.sigil_targaryen
+                 R.drawable.mad_king,
+                ""
+            )
+        )
+        list.add(
+            TargaryenModel(
+                "Viserys the first",
+                "the Young King",
+                "77 A.C",
+                "129 A.C",
+                "Fire and Blood",
+                "Balerion",
+                "26",
+                "Silver",
+                "purple",
+                R.drawable.viserys_the_first,
+                ""
+            )
+        )
+        list.add(
+            TargaryenModel(
+                "Jaehaerys the first",
+                "the Consiliator",
+                "34 A.C",
+                "103 A.C",
+                "Fire and Blood",
+                "Vermithor`",
+                "55",
+                "Silver",
+                "purple",
+                R.drawable.jaehaerys,
+                ""
             )
         )
         return list

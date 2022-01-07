@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/tvTargaryenResult"
+        style="@style/AnironTextStyleWhite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="181dp"
@@ -22,5 +23,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTargaryenResult" />
+
+    <TextView
+        android:id="@+id/tvTargaryenDescription"
+        style="@style/AnironTextStyleWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivTargaryenImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

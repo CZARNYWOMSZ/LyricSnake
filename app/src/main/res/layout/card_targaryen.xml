@@ -63,52 +63,62 @@
 
                 <TextView
                     android:id="@+id/tvTargaryenNameLabel"
+                    style="@style/AnironTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name:"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:shadowColor="@color/white"
-                    android:shadowDx="1"
-                    android:shadowDy="1"
-                    android:shadowRadius="2"
-                    android:fontFamily="@font/aniron" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tvTargaryenName"
+                    style="@style/AnironTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toEndOf="@+id/tvTargaryenNameLabel"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Aegon"
-                    style="@style/AnironTextStyle"/>
+                    tools:text="Aegon" />
+
+                <TextView
+                    android:id="@+id/tvTargaryenAliasLabel"
+                    style="@style/AnironTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alias:"
+                    app:layout_constraintStart_toStartOf="@id/tvTargaryenNameLabel"
+                    app:layout_constraintEnd_toEndOf="@id/tvTargaryenNameLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvTargaryenNameLabel" />
 
                 <TextView
                     android:id="@+id/tvTargaryenAlias"
+                    style="@style/AnironTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:textColor="@color/black"
                     android:textColorHighlight="@color/white"
                     app:layout_constraintEnd_toEndOf="@+id/tvTargaryenName"
+                    app:layout_constraintStart_toEndOf="@+id/tvTargaryenAliasLabel"
                     app:layout_constraintStart_toStartOf="@+id/tvTargaryenName"
                     app:layout_constraintTop_toBottomOf="@+id/tvTargaryenName"
-                    tools:text="the conqueror"
-                    style="@style/AnironTextStyle"/>
+                    tools:text="the conqueror" />
+
 
                 <TextView
                     android:id="@+id/tvTargaryenWords"
+                    style="@style/GotTextStyleRed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textColorHighlight="@color/white"
-                    app:layout_constraintEnd_toEndOf="@+id/tvTargaryenAlias"
-                    app:layout_constraintStart_toStartOf="@+id/tvTargaryenAlias"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvTargaryenAlias"
-                    tools:text="fire and blood"
-                    style="@style/AnironTextStyle"/>
+                    tools:text="fire and blood" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

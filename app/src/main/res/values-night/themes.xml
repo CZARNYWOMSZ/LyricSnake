@@ -12,14 +12,33 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@fontaniron</item>
     </style>
     <style name="AnironTextStyle" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">10sp</item>
         <item name="android:fontFamily">@font/aniron</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:shadowColor">@color/white</item>
         <item name="android:shadowRadius">3</item>
         <item name="android:shadowDx">2</item>
         <item name="android:shadowDy">2</item>
+    </style>
+    <style name="AnironTextStyleWhite" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/aniron</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">@color/bright_red</item>
+        <item name="android:shadowRadius">6</item>
+        <item name="android:shadowDx">4</item>
+        <item name="android:shadowDy">4</item>
+    </style>
+    <style name="GotTextStyleRed" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/game_of_thrones</item>
+        <item name="android:textColor">@color/bright_red</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">6</item>
+        <item name="android:shadowDx">4</item>
+        <item name="android:shadowDy">4</item>
     </style>
 </resources>
