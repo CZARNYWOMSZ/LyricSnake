@@ -142,6 +142,9 @@
         <argument
             android:name="eyeColour"
             app:argType="string"/>
+        <argument
+            android:name="image"
+            app:argType="integer"/>
     </fragment>
 
 </navigation>

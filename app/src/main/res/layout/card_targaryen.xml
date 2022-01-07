@@ -54,8 +54,8 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/blackLine"
@@ -67,7 +67,14 @@
                     android:layout_height="wrap_content"
                     android:text="Name:"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:fontFamily="@font/aniron" />
 
                 <TextView
                     android:id="@+id/tvTargaryenName"
@@ -76,7 +83,8 @@
                     android:textColor="@color/black"
                     app:layout_constraintStart_toEndOf="@+id/tvTargaryenNameLabel"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Name:" />
+                    tools:text="Aegon"
+                    style="@style/AnironTextStyle"/>
 
                 <TextView
                     android:id="@+id/tvTargaryenAlias"
@@ -87,7 +95,8 @@
                     app:layout_constraintEnd_toEndOf="@+id/tvTargaryenName"
                     app:layout_constraintStart_toStartOf="@+id/tvTargaryenName"
                     app:layout_constraintTop_toBottomOf="@+id/tvTargaryenName"
-                    tools:text="LastName" />
+                    tools:text="the conqueror"
+                    style="@style/AnironTextStyle"/>
 
                 <TextView
                     android:id="@+id/tvTargaryenWords"
@@ -98,7 +107,8 @@
                     app:layout_constraintEnd_toEndOf="@+id/tvTargaryenAlias"
                     app:layout_constraintStart_toStartOf="@+id/tvTargaryenAlias"
                     app:layout_constraintTop_toBottomOf="@+id/tvTargaryenAlias"
-                    tools:text="Age" />
+                    tools:text="fire and blood"
+                    style="@style/AnironTextStyle"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

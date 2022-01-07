@@ -44,7 +44,8 @@ class TargaryenFragment : Fragment() {
                     model.hisDragonsName,
                     model.yearsRuled,
                     model.hairColour,
-                    model.eyeColour
+                    model.eyeColour,
+                    model.image
                 )
             )
         }
@@ -64,7 +65,8 @@ class TargaryenFragment : Fragment() {
                 "Balerion",
                 "0-20",
                 "Silver",
-                "purple"
+                "purple",
+                R.drawable.sigil_targaryen
             )
         )
 
@@ -78,7 +80,8 @@ class TargaryenFragment : Fragment() {
                 "Balerion",
                 "0-20",
                 "Silver",
-                "purple"
+                "purple",
+                 R.drawable.sigil_targaryen
             )
         )
         return list

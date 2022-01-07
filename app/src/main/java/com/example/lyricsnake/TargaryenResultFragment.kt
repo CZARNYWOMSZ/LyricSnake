@@ -1,6 +1,7 @@
 package com.example.lyricsnake
 
 import android.R
+import android.content.Context
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.Gravity
@@ -35,12 +36,16 @@ class TargaryenResultFragment : Fragment() {
         val name = navArgs<TargaryenResultFragmentArgs>().value.name
         val eyeColour = navArgs<TargaryenResultFragmentArgs>().value.eyeColour
         val hairColour = navArgs<TargaryenResultFragmentArgs>().value.hairColour
+        val image = navArgs<TargaryenResultFragmentArgs>().value.image
 
         var text = ""
         text += "Kings Name: ${name}\n"
         text += "${name}'s eye colour: ${eyeColour}\n"
         text += "${name}'s hair colour: ${hairColour}"
         binding.tvTargaryenResult.text = text
+        context?.let {
+            binding.ivTargaryenImage.setImageDrawable(ContextCompat.getDrawable(it,image))
+        }
     }
 
 
@@ -54,8 +59,10 @@ class TargaryenResultFragment : Fragment() {
         words: String,
         yearsRuled: String,
         hairColour: String,
-        eyeColour: String): TargaryenModel {
-        return TargaryenModel(name, alias, yearBornIn, yearDiedIn, hisDragonsName, words, yearsRuled, hairColour, eyeColour)
+        eyeColour: String,
+        image: Int
+    ): TargaryenModel {
+        return TargaryenModel(name, alias, yearBornIn, yearDiedIn, hisDragonsName, words, yearsRuled, hairColour, eyeColour, image)
     }
 
 

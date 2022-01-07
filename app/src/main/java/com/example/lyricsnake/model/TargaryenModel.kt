@@ -9,5 +9,6 @@ data class TargaryenModel(
     val hisDragonsName: String,
     val yearsRuled: String,
     val hairColour: String,
-    var eyeColour:String
+    val eyeColour: String,
+    val image: Int
 )
