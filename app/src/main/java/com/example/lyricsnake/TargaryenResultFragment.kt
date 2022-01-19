@@ -47,9 +47,7 @@ class TargaryenResultFragment : Fragment() {
         context?.let {
             binding.ivTargaryenImage.setImageDrawable(ContextCompat.getDrawable(it,image))
         }
-        var info = ""
-        text += "${description}"
-        binding.tvTargaryenDescription.text = info
+        binding.tvTargaryenDescription.text = description
     }
 
 
