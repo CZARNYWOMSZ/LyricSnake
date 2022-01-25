@@ -6,16 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
-import com.example.lyricsnake.adapter.AnimalListAdapter
-import com.example.lyricsnake.adapter.FrogListAdapter
-import com.example.lyricsnake.adapter.PersonListAdapter
 import com.example.lyricsnake.adapter.TargaryenListAdapter
-import com.example.lyricsnake.databinding.FragmentAnimalsCardBinding
-import com.example.lyricsnake.databinding.FragmentCardBinding
-import com.example.lyricsnake.databinding.FragmentListBinding
 import com.example.lyricsnake.databinding.FragmentTargaryenBinding
-import com.example.lyricsnake.model.FrogModel
 import com.example.lyricsnake.model.TargaryenModel
 
 class TargaryenFragment : Fragment() {

@@ -12,10 +12,11 @@ class TargaryenListAdapter(
     private val onClickListener:(TargaryenModel) -> Unit
 ) : ListAdapter<TargaryenModel, TargaryenListAdapter.TargaryenListAdapterViewHolder>(DIFF_CALLBACK){
 
-    override fun onCreateViewHolder(parent:ViewGroup,viewType:Int):TargaryenListAdapterViewHolder =
-        TargaryenListAdapterViewHolder(
+    override fun onCreateViewHolder(parent:ViewGroup,viewType:Int):TargaryenListAdapterViewHolder{
+        return TargaryenListAdapterViewHolder(
             CardTargaryenBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         )
+    }
 
     override fun onBindViewHolder(holder: TargaryenListAdapterViewHolder, position: Int) =
         holder.bind(getItem(position),onClickListener)
@@ -41,4 +42,6 @@ class TargaryenListAdapter(
             binding.cvTargaryen.setOnClickListener{onClickListener(model)}
         }
     }
+
+
 }
