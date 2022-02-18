@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lyricsnake.adapter.PrimarchListAdapter
@@ -12,9 +13,16 @@ import com.example.lyricsnake.databinding.FragmentPrimarchBinding
 import com.example.lyricsnake.databinding.FragmentTargaryenBinding
 import com.example.lyricsnake.model.PrimarchModel
 import com.example.lyricsnake.model.TargaryenModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class PrimarchFragment : Fragment() {
 
+    @Inject
+    lateinit var hiltTest: HiltTest
+    @Inject
+    lateinit var primarchHelper: PrimarchHelper
     private var _binding: FragmentPrimarchBinding? = null
     private val binding get() = _binding!!
 
@@ -24,6 +32,7 @@ class PrimarchFragment : Fragment() {
     ): View? {
         _binding = FragmentPrimarchBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,50 +49,8 @@ class PrimarchFragment : Fragment() {
             )
         }
         binding.rvPrimarch.adapter = primarchListAdapter
-        primarchListAdapter.submitList(createPrimarchList())
-    }
-
-    private fun createPrimarchList(): List<PrimarchModel> {
-        val list = mutableListOf<PrimarchModel>()
-        list.add(
-            PrimarchModel(
-                "Corvus Corax",
-                "Raven Guard",
-                "IX",
-                R.drawable.corvus_corax,
-                LOYALIST
-            )
-        )
-        list.add(
-            PrimarchModel(
-                "Conrad Curze",
-                "Night Lords",
-                "VIII",
-                R.drawable.konrad_curze,
-                HERETIC
-
-            )
-        )
-        list.add(
-            PrimarchModel(
-                "Jaghatai Khan",
-                "White Scars",
-                "V",
-                R.drawable.jaghatai_khan,
-                LOYALIST
-            )
-        )
-        list.add(
-            PrimarchModel(
-                "Fulgrim",
-                "Emperors Children",
-                "VII",
-                R.drawable.fulgrim,
-                HERETIC
-            )
-        )
-
-        return list
+        primarchListAdapter.submitList(primarchHelper.createPrimarchList())
+        Toast.makeText(context,hiltTest.getHiltText(), Toast.LENGTH_LONG).show()
     }
 
     override fun onDestroyView() {
