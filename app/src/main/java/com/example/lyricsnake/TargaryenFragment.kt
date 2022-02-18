@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.lyricsnake.adapter.TargaryenListAdapter
+import com.example.lyricsnake.adapter.TargaryenKingsListAdapter
 import com.example.lyricsnake.databinding.FragmentTargaryenBinding
 import com.example.lyricsnake.model.TargaryenModel
 
@@ -25,7 +25,7 @@ class TargaryenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val TargaryenListAdapter = TargaryenListAdapter { model: TargaryenModel ->
+        val targaryenKingsListAdapter = TargaryenKingsListAdapter { model: TargaryenModel ->
             findNavController().navigate(
                 TargaryenFragmentDirections.actionTargaryenFragmentToTargaryenResultFragment(
                     model.name,
@@ -38,12 +38,13 @@ class TargaryenFragment : Fragment() {
                     model.hairColour,
                     model.eyeColour,
                     model.image,
-                    model.description
+                    model.description,
+                    model.gender
                 )
             )
         }
-        binding.rvTargaryen.adapter = TargaryenListAdapter
-        TargaryenListAdapter.submitList(createTargaryenList())
+        binding.rvTargaryen.adapter = targaryenKingsListAdapter
+        targaryenKingsListAdapter.submitList(createTargaryenList())
     }
 
     private fun createTargaryenList(): List<TargaryenModel> {
@@ -60,7 +61,8 @@ class TargaryenFragment : Fragment() {
                 "Silver",
                 "purple",
                 R.drawable.aegon_the_conqueror,
-            ""
+            "",
+                WOMAN
             )
         )
 
@@ -76,7 +78,8 @@ class TargaryenFragment : Fragment() {
                 "Silver",
                 "purple",
                  R.drawable.mad_king,
-                ""
+                "",
+                MAN
             )
         )
         list.add(
@@ -91,7 +94,8 @@ class TargaryenFragment : Fragment() {
                 "Silver",
                 "purple",
                 R.drawable.viserys_the_first,
-                ""
+                "",
+                MAN
             )
         )
         list.add(
@@ -120,7 +124,8 @@ class TargaryenFragment : Fragment() {
                         "\n" +
                         "Jaehaerys was known for his love of travel,[3] and made many royal progresses. He and Alysanne were known to stay at the inn at the crossroads during their journeys so much so, that afterwards it was renamed the Two Crowns.[3][13]\n" +
                         "\n" +
-                        "When he was younger, Jaehaerys had been fascinated by the ponderous tomes and Old Valyrian scrolls found in Dragonstone's library.[11] Jaehaerys had always been close to his sister-wife Alysanne, even as a child, and had always had a strong affection and regard for her.[10]"
+                        "When he was younger, Jaehaerys had been fascinated by the ponderous tomes and Old Valyrian scrolls found in Dragonstone's library.[11] Jaehaerys had always been close to his sister-wife Alysanne, even as a child, and had always had a strong affection and regard for her.[10]",
+                WOMAN
             )
         )
         return list

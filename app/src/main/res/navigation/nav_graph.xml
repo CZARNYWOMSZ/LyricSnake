@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/TargaryenFragment">
+    app:startDestination="@id/PrimarchFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -147,6 +147,42 @@
             app:argType="integer"/>
         <argument
             android:name="description"
+            app:argType="string"/>
+        <argument
+            android:name="gender"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PrimarchFragment"
+        android:name="com.example.lyricsnake.PrimarchFragment"
+        android:label="PrimarchFragment"
+        tools:layout="@layout/fragment_primarch">
+
+        <action
+            android:id="@+id/action_PrimarchFragment_to_PrimarchResultFragment"
+            app:destination="@id/PrimarchResultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PrimarchResultFragment"
+        android:name="com.example.lyricsnake.PrimarchResultFragment"
+        android:label="PrimarchResultFragment"
+        tools:layout="@layout/fragment_primarch_result">
+        <argument
+            android:name="name"
+            app:argType="string"/>
+        <argument
+            android:name="hisChapter"
+            app:argType="string"/>
+        <argument
+            android:name="hisChaptersNumber"
+            app:argType="string"/>
+        <argument
+            android:name="image"
+            app:argType="integer"/>
+        <argument
+            android:name="alligence"
             app:argType="string"/>
     </fragment>
 

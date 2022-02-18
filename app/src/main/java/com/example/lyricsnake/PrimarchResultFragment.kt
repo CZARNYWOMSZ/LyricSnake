@@ -17,37 +17,36 @@ import com.example.lyricsnake.model.FrogModel
 import com.example.lyricsnake.model.TargaryenModel
 
 
-class TargaryenResultFragment : Fragment() {
+class PrimarchResultFragment : Fragment() {
 
-    private var _binding: FragmentTargaryenResultBinding? = null
+    private var _binding: FragmentPrimarchResultBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentTargaryenResultBinding.inflate(inflater, container, false)
+        _binding = FragmentPrimarchResultBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val name = navArgs<TargaryenResultFragmentArgs>().value.name
-        val eyeColour = navArgs<TargaryenResultFragmentArgs>().value.eyeColour
-        val hairColour = navArgs<TargaryenResultFragmentArgs>().value.hairColour
-        val image = navArgs<TargaryenResultFragmentArgs>().value.image
-        val description = navArgs<TargaryenResultFragmentArgs>().value.description
+        val name = navArgs<PrimarchResultFragmentArgs>().value.name
+        val hisChapter = navArgs<PrimarchResultFragmentArgs>().value.hisChapter
+        val hisChaptersNumber = navArgs<PrimarchResultFragmentArgs>().value.hisChaptersNumber
+        val image = navArgs<PrimarchResultFragmentArgs>().value.image
+
 
         var text = ""
-        text += "Kings Name: ${name}\n"
-        text += "${name}'s eye colour: ${eyeColour}\n"
-        text += "${name}'s hair colour: ${hairColour}"
-        binding.tvTargaryenResult.text = text
+        text += "Primarchs Name: ${name}\n"
+        text += "${name}'s Astartes Chapter: ${hisChapter}\n"
+        text += "it's number: ${hisChaptersNumber}"
+        binding.tvPrimarchResult.text = text
         context?.let {
-            binding.ivTargaryenImage.setImageDrawable(ContextCompat.getDrawable(it,image))
+            binding.ivPrimarchImage.setImageDrawable(ContextCompat.getDrawable(it,image))
         }
-        binding.tvTargaryenDescription.text = description
     }
 
     override fun onDestroyView() {

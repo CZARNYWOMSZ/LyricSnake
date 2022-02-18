@@ -11,5 +11,6 @@ data class TargaryenModel(
     val hairColour: String,
     val eyeColour: String,
     val image: Int,
-    val description: String
+    val description: String,
+    val gender: String
 )

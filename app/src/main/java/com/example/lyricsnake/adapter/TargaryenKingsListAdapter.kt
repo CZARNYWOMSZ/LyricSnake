@@ -6,37 +6,40 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lyricsnake.databinding.CardTargaryenBinding
-import com.example.lyricsnake.databinding.FragmentTargaryenResultBinding
+import com.example.lyricsnake.MAN
+import com.example.lyricsnake.databinding.CardKingBinding
+import com.example.lyricsnake.databinding.CardQueenBinding
 import com.example.lyricsnake.model.TargaryenModel
 
-class TargaryenKingsListAdapter : ListAdapter<TargaryenModel, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
+class TargaryenKingsListAdapter(
+    private val onClickListener:(TargaryenModel) -> Unit
+) : ListAdapter<TargaryenModel, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
 
-    private val viewTypeText = 1
-    private val viewTypeImage = 2
+    private val viewTypeKing = 1
+    private val viewTypeQueen = 2
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         when (viewType) {
-            viewTypeText -> TargaryenKingsListAdapterViewHolderText(
-                LayoutInflater.from(parent.context)
-                    .inflate(,parent,false)
+            viewTypeKing -> TargaryenKingsListAdapterKingViewHolder(
+                CardKingBinding.inflate(LayoutInflater.from(parent.context),parent,false)
             )
-            viewTypeImage -> TargaryenKingsListAdapterViewHolderImage(
-                LayoutInflater.from(parent.context)
-                    .inflate(LayoutInflater.from(parent.context),parent,false)
+            viewTypeQueen -> TargaryenKingsListAdapterQueenViewHolder(
+                CardQueenBinding.inflate(LayoutInflater.from(parent.context),parent,false)
             )
-            else -> TargaryenKingsListAdapterViewHolderText(
-                LayoutInflater.from(parent.context)
-                    .inflate(LayoutInflater.from(parent.context),parent,false)
+            else -> TargaryenKingsListAdapterKingViewHolder(
+                CardKingBinding.inflate(LayoutInflater.from(parent.context),parent,false)
             )
         }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) =
-        if (holder.itemViewType == viewTypeText) {
-            (holder as TargaryenKingsListAdapterViewHolderText).bind(getItem(position))
+        if (holder.itemViewType == viewTypeKing) {
+            (holder as TargaryenKingsListAdapterKingViewHolder).bind(getItem(position),onClickListener)
         } else {
-            (holder as TargaryenKingsListAdapterViewHolderImage).bind(getItem(position))
+            (holder as TargaryenKingsListAdapterQueenViewHolder).bind(getItem(position),onClickListener)
         }
+
+    override fun getItemViewType(position: Int): Int =
+        if (getItem(position).gender == MAN) viewTypeKing else viewTypeQueen
 
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<TargaryenModel>() {
@@ -48,19 +51,27 @@ class TargaryenKingsListAdapter : ListAdapter<TargaryenModel, RecyclerView.ViewH
         }
     }
 
-    class TargaryenKingsListAdapterViewHolderText(private val binding : FragmentTargaryenResultBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(model: TargaryenModel) {
-            itemView.apply {
-                binding.tvTargaryenDescription.text = model.name
-            }
+    class TargaryenKingsListAdapterKingViewHolder(private val binding : CardKingBinding) : RecyclerView.ViewHolder(binding.root){
+        fun bind(
+            model: TargaryenModel,
+            onClickListener: (TargaryenModel) -> Unit
+        ){
+            binding.tvTargaryenName.text = model.name
+            binding.tvTargaryenAlias.text = model.alias
+            binding.tvTargaryenWords.text = model.words
+            binding.cvTargaryen.setOnClickListener{onClickListener(model)}
         }
     }
 
-    class TargaryenKingsListAdapterViewHolderImage(private val binding : FragmentTargaryenResultBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(model: TargaryenModel) {
-            itemView.apply {
-                binding.ivTargaryenImage.baseline = model.image
-            }
+    class TargaryenKingsListAdapterQueenViewHolder(private val binding : CardQueenBinding) : RecyclerView.ViewHolder(binding.root){
+        fun bind(
+            model: TargaryenModel,
+            onClickListener: (TargaryenModel) -> Unit
+        ){
+            binding.tvTargaryenName.text = model.name
+            binding.tvTargaryenAlias.text = model.alias
+            binding.tvTargaryenWords.text = model.words
+            binding.cvTargaryen.setOnClickListener{onClickListener(model)}
         }
     }
 }
