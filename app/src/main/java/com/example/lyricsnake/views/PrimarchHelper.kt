@@ -1,5 +1,8 @@
-package com.example.lyricsnake
+package com.example.lyricsnake.views
 
+import com.example.lyricsnake.HERETIC
+import com.example.lyricsnake.LOYALIST
+import com.example.lyricsnake.R
 import com.example.lyricsnake.model.PrimarchModel
 import javax.inject.Inject
 

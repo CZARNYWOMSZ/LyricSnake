@@ -7,13 +7,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lyricsnake.LOYALIST
-import com.example.lyricsnake.MAN
 import com.example.lyricsnake.databinding.CardHereticBinding
-import com.example.lyricsnake.databinding.CardKingBinding
 import com.example.lyricsnake.databinding.CardLoyalistBinding
-import com.example.lyricsnake.databinding.CardQueenBinding
 import com.example.lyricsnake.model.PrimarchModel
-import com.example.lyricsnake.model.TargaryenModel
 
 class PrimarchListAdapter(
     private val onClickListener:(PrimarchModel) -> Unit
