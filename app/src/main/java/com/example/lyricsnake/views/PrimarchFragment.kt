@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lyricsnake.adapter.PrimarchListAdapter
 import com.example.lyricsnake.databinding.FragmentPrimarchBinding
-import com.example.lyricsnake.model.PrimarchModel
+import com.example.lyricsnake.model.ArtistModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -31,7 +31,8 @@ class PrimarchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val primarchListAdapter = PrimarchListAdapter { model: PrimarchModel ->
+
+        val primarchListAdapter = PrimarchListAdapter { model: ArtistModel ->
             findNavController().navigate(
                 PrimarchFragmentDirections.actionPrimarchFragmentToPrimarchResultFragment(
                     model.name,

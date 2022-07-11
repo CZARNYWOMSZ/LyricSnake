@@ -3,15 +3,15 @@ package com.example.lyricsnake.views
 import com.example.lyricsnake.HERETIC
 import com.example.lyricsnake.LOYALIST
 import com.example.lyricsnake.R
-import com.example.lyricsnake.model.PrimarchModel
+import com.example.lyricsnake.model.ArtistModel
 import javax.inject.Inject
 
 
 class PrimarchHelper @Inject constructor() {
-     fun createPrimarchList(): List<PrimarchModel> {
-        val list = mutableListOf<PrimarchModel>()
+     fun createPrimarchList(): List<ArtistModel> {
+        val list = mutableListOf<ArtistModel>()
         list.add(
-            PrimarchModel(
+            ArtistModel(
                 "Corvus Corax",
                 "Raven Guard",
                 "IX",
@@ -20,7 +20,7 @@ class PrimarchHelper @Inject constructor() {
             )
         )
         list.add(
-            PrimarchModel(
+            ArtistModel(
                 "Conrad Curze",
                 "Night Lords",
                 "VIII",
@@ -30,7 +30,7 @@ class PrimarchHelper @Inject constructor() {
             )
         )
         list.add(
-            PrimarchModel(
+            ArtistModel(
                 "Jaghatai Khan",
                 "White Scars",
                 "V",
@@ -39,7 +39,7 @@ class PrimarchHelper @Inject constructor() {
             )
         )
         list.add(
-            PrimarchModel(
+            ArtistModel(
                 "Fulgrim",
                 "Emperors Children",
                 "VII",

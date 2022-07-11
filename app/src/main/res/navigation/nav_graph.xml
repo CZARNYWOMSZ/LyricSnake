@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/PrimarchFragment">
+    app:startDestination="@id/SearchFragment">
 
     <fragment
         android:id="@+id/PrimarchFragment"
@@ -38,4 +38,43 @@
             app:argType="string"/>
     </fragment>
 
+    <fragment
+        android:id="@+id/ArtistFragment"
+        android:name="com.example.lyricsnake.views.ArtistFragment"
+        android:label="ArtistFragment"
+        tools:layout="@layout/fragment_artist">
+    </fragment>
+
+    <fragment
+        android:id="@+id/SearchFragment"
+        android:name="com.example.lyricsnake.views.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_SearchFragment_to_ArtistPageFragment"
+            app:destination="@id/ArtistPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ArtistPageFragment"
+        android:name="com.example.lyricsnake.views.ArtistPageFragment"
+        android:label="ArtistPageFragment"
+        tools:layout="@layout/fragment_artist_page">
+        <argument
+            android:name="id"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_ArtistPageFragment_to_SongFragment"
+            app:destination="@id/SongFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SongFragment"
+        android:name="com.example.lyricsnake.views.SongFragment"
+        android:label="SongFragment"
+        tools:layout="@layout/fragment_song">
+        <argument
+            android:name="id"
+            app:argType="integer"/>
+    </fragment>
 </navigation>

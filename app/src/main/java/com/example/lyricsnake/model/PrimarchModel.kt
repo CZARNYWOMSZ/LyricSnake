@@ -1,6 +1,6 @@
 package com.example.lyricsnake.model
 
-data class PrimarchModel(
+data class ArtistModel(
     val name: String,
     val hisChapter: String,
     val hisChaptersNumber: String,
